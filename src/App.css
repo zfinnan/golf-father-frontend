@@ -1,0 +1,275 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+.navbar {
+  background: rgb(81, 150, 173);
+}
+
+.footer {
+  background: rgb(81, 150, 173);
+  color: white;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+  background-color: rgb(228, 228, 228);
+  background-size: cover;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+}
+th {
+  padding: 10px;
+  text-decoration: underline;
+}
+
+.expense-input {
+  width: 65px;
+}
+
+.pie-chart {
+  height: 300px;
+  width: 300px;
+  position: relative;
+  padding-top: 10px;
+  margin-left: 36%;
+}
+
+/* .progress{
+  padding: 10%;
+} */
+
+.blogPost {
+  text-align: center;
+}
+.login {
+  line-height: 1em;
+  display: inline-block;
+  text-decoration: none;
+  /* padding: 120px; */
+  margin-left: 750px;
+}
+a {
+  color: whitesmoke;
+}
+
+#deleteButton {
+  border-radius: 3%;
+  width: 6px;
+  height: 10px;
+  font-size: 10px;
+  text-align: center;
+  display: inline-block;
+  text-overflow: ellipsis;
+  background-color: Transparent;
+  border: none;
+  margin-bottom: 10px;
+  color: rgb(224, 51, 51);
+}
+
+
+
+#deleteButton :hover {
+  cursor: pointer;
+}
+
+#editButton {
+  height: 2.5px;
+  width: 2.5px;
+  color: rgb(138, 138, 138);
+}
+
+.expenseTitle {
+  text-align: center;
+}
+
+.expenseEntryForm {
+  display: inline-block;
+  margin-left: 32%;
+  margin-top: 2.5%;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 2%;
+}
+
+.expenseEditForm {
+  display: inline-block;
+  margin-left: 32%;
+  margin-top: 2.5%;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 2%;
+}
+
+#expenseCategoryDropdown {
+  height: 20px;
+}
+
+#expenseQuestion {
+  justify-content: left;
+}
+
+#expenseAnswer {
+  float: right;
+}
+
+.expenses {
+  width: auto;
+  height: auto;
+  padding: auto;
+  border: 2px solid black;
+}
+
+#expensesText {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#addSubmit {
+  border-radius: 5%;
+  float: right;
+}
+
+#saveExpense {
+  border-radius: 5%;
+  float: right;
+}
+
+#profileHeader {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.totalSpending{
+  padding-right: 1px;
+  padding-left: 5px;
+  font-size: 12px;
+}
+.transportation{
+  padding-right: 14.8px;
+  padding-left: 5px;
+  font-size: 12px;
+}
+.daily{
+  padding-right: 67.3px;
+  padding-left: 5px;
+  font-size: 12px;
+}
+.home{
+  padding-right: 60.6px;
+  padding-left: 5px;
+  font-size: 12px;
+}
+.entertainment{
+  padding-right: 16px;
+}
+.totalSpending,
+.home,
+.entertainment,
+.transportation,
+.daily {
+  padding-right: 20px;
+  padding-left: 5px;
+  font-size: 12px;
+}
+#dashboardPieChart {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#setAsideLogo {
+  margin-left: 10%;
+  border-radius: 2%;
+}
+
+#welcomeHeader {
+  margin-left: 10%;
+}
+.welcomeButtons {
+  color: black;
+  margin-left: 80%;
+}
+
+#welcomeButtonSignup {
+  color: black;
+  height: 15px;
+  width: 15px;
+}
+
+#welcomeButtonLogin {
+  color: black;
+  height: 15px;
+  width: 15px;
+}
+
+#expenseBreakdownHeader {
+  text-align: center;
+}
+
+#expenseBreakdownTable {
+  margin-left: 20%;
+}
+
+.breakDown{
+  font-size: large;
+}
+
+.linkedin{
+  color: rgb(14, 98, 166);
+  
+}
+
+.github{
+  color:rgb(138, 138, 138);
+  padding-right: 3px;
+}
+.github:hover {
+  color: black;
+}
+.row{
+  text-align: center;
+}
+
+
+td {
+  display: flex inline;
+  text-align: center;
+}
+.breakdowntitle {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  text-decoration: underline;
+}
+.monthselector {
+  display: flex;
+  justify-content: center;
+}
+.expensetable {
+  margin-left: auto;
+  margin-right: auto;
+}
+button {
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #60a3bc;
+  padding: 5px;
+  border-radius: 50px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+  margin-left: 5px;
+}
+

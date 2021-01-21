@@ -369,9 +369,9 @@ const Scorecard = (props) => {
       playerThree: playerThree,
       playerFour: playerFour
     };
-    // console.log(data)
+    console.log(data)
     axios
-      .post(`${REACT_APP_SERVER_URL}/api/expenses/new`, {
+      .post(`${REACT_APP_SERVER_URL}/api/rounds/new`, {
         data,
       })
       .then((res) => {

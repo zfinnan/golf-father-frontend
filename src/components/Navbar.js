@@ -6,7 +6,7 @@ const Navbar = (props) => {
     <nav className="navbar navbar-expand-lg">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          SetAside
+          Golf Father
         </Link>
         <button
           className="navbar-toggler"
@@ -27,13 +27,8 @@ const Navbar = (props) => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" exact to="/expenseentry">
-                Add New Expense
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" exact to="/expensebreakdown">
-                Breakdown
+              <NavLink className="nav-link" exact to="/newround">
+                New Round
               </NavLink>
             </li>
             <li className="nav-item">

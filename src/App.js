@@ -7,20 +7,14 @@ import setAuthToken from "./utils/setAuthToken";
 // CSS
 import "./App.css";
 // Components
-import Welcome from "./components/Welcome";
+import Scorecard from "./components/Scorecard";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
-import ExpenseEntry from "./components/ExpenseEntry";
-import EditExpense from "./components/EditExpense"
 import Dashboard from "./components/Dashboard";
-import Budget from "./components/Budget";
-import Blogpost from "./components/Blogpost";
-import Blog from "./components/Blog"
-import ExpenseBreakdown from "./components/ExpenseBreakdown"
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -91,14 +85,8 @@ function App() {
             component={Profile}
             user={currentUser}
           />
-          <Route exact path="/" component={Welcome} />
-          <Route exact path="/expenseentry" component={ExpenseEntry} />
+          <Route exact path="/" component={Scorecard} />
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route path='/budget' component={Budget} />
-          <Route exact path="/blogpost" component={Blogpost} />
-          <Route exact path="/blog" component={Blog} />
-          <Route exact path="/expensebreakdown" component={ExpenseBreakdown} />
-          <Route exact path="/editexpense/:id" component={EditExpense} />
         </Switch>
       </div>
       <Footer />

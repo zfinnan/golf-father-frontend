@@ -51,10 +51,11 @@ a {
   overflow: visible;
 }
 
-#saveRound {
+#saveRoundButton {
   height: 30px;
   width: 120px;
   margin-top: 10px;
+  border-radius: 8%;
 }
 
 #courseNameInput {
@@ -63,6 +64,23 @@ a {
   text-align: center;
   margin-left: 200%;
   font-size: 20px;
+}
+
+#roundDay {
+  width: 30px;
+  margin-left: 3900%;
+  display: inline-block;
+}
+
+#roundMonth {
+  width: 30px;
+  margin-left: 3825%;
+  display: inline-block;
+}
+#roundYear {
+  width: 30px;
+  margin-left: 3750%;
+  display: inline-block;
 }
 
 #roundInputCell {

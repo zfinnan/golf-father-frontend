@@ -21,7 +21,6 @@ const useStyles = makeStyles({
   }
 });
 
-
 const Scorecard = (props) => {
 
   const [course, setCourse] = useState("");
@@ -397,10 +396,14 @@ const Scorecard = (props) => {
         setRedirect(true);
       });
   };
-
-  
   
   const classes = useStyles();
+
+  if (redirect) {
+    return ( 
+        <Redirect to="/profile" />
+    )
+  } 
 
   return (
     
@@ -412,6 +415,9 @@ const Scorecard = (props) => {
         <TableHead>
           <TableRow>
             <TableCell align="center"><input id="courseNameInput" placeholder="Course Name"></input></TableCell>
+            <TableCell align="right"><input id="roundDay" placeholder="DD"></input></TableCell>
+            <TableCell><input id="roundMonth" placeholder="MM"></input></TableCell>
+            <TableCell><input id="roundYear" placeholder="YY"></input></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Hole</TableCell>
@@ -659,7 +665,7 @@ const Scorecard = (props) => {
       </Table>
       </TableContainer>
       </form>
-      <button type="submit" id="saveRound" value="Save Round">Save Round</button>
+      <button type="submit" id="saveRoundButton" value="Save Round" onClick={handleSubmit}>Save Round</button>
     </div>
   );
   

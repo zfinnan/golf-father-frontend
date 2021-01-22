@@ -70,17 +70,23 @@ a {
   width: 30px;
   margin-left: 3900%;
   display: inline-block;
+  background: transparent;
+  border: none;
 }
 
 #roundMonth {
   width: 30px;
   margin-left: 3825%;
   display: inline-block;
+  background: transparent;
+  border: none;
 }
 #roundYear {
   width: 30px;
   margin-left: 3750%;
   display: inline-block;
+  background: transparent;
+  border: none;
 }
 
 #roundInputCell {

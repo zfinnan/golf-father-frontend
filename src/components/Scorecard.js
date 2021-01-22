@@ -623,6 +623,5 @@ const Scorecard = (props) => {
   
 };
 
-
    
 export default Scorecard;

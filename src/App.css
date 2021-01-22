@@ -7,6 +7,7 @@
 }
 
 .footer {
+  margin-top: 20px;
   background: rgb(161, 168, 170);
   color: white;
 }
@@ -37,4 +38,41 @@ body {
 }
 a {
   color: whitesmoke;
+}
+
+#scoreCardHeader {
+  text-align: center;
+}
+
+#scoreCard {
+  width: 1100px;
+  height: 1100px;
+  text-align: center;
+  overflow: visible;
+}
+
+#saveRound {
+  height: 30px;
+  width: 120px;
+  margin-top: 10px;
+}
+
+#courseNameInput {
+  background: transparent;
+  border: none;
+  text-align: center;
+  margin-left: 200%;
+  font-size: 20px;
+}
+
+#roundInputCell {
+  width: 30px;
+  background: transparent;
+  border: none;
+}
+
+#roundTotalInputCell {
+  width: 40px;
+  background: transparent;
+  border: none;
 }

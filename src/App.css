@@ -94,3 +94,14 @@ a {
   background: transparent;
   border: none;
 }
+
+#playerNameInput {
+  width: 80px;
+  background: transparent;
+  border: none;
+}
+#playerNameInput1 {
+  width: 85px;
+  background: transparent;
+  border: none;
+}

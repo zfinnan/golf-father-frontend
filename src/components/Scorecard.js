@@ -414,10 +414,10 @@ const Scorecard = (props) => {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="center"><input id="courseNameInput" placeholder="Course Name"></input></TableCell>
-            <TableCell align="right"><input id="roundDay" placeholder="DD"></input></TableCell>
-            <TableCell><input id="roundMonth" placeholder="MM"></input></TableCell>
-            <TableCell><input id="roundYear" placeholder="YY"></input></TableCell>
+            <TableCell align="center"><input id="courseNameInput" placeholder="Course Name" onChange={handleCourse}></input></TableCell>
+            <TableCell align="right"><input id="roundDay" placeholder="DD" onChange={handleRoundDay}></input></TableCell>
+            <TableCell><input id="roundMonth" placeholder="MM" onChange={handleRoundMonth}></input></TableCell>
+            <TableCell><input id="roundYear" placeholder="YY" onChange={handleRoundYear}></input></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Hole</TableCell>
@@ -445,6 +445,126 @@ const Scorecard = (props) => {
           </TableRow>
           <TableRow>
             <TableCell>Yardage</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleOneYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwoYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThreeYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFiveYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSevenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEightYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleNineYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleFrontNineYardage}></input>  &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleElevenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwelveYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThirteenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourteenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFifteenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixteenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSeventeenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEighteenYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleBackNineYardage}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleTotalYardage}></input> &nbsp;</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Par</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleOnePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwoPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThreePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFivePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSevenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEightPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleNinePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleFrontNinePar}></input>  &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleElevenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwelvePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThirteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFifteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSeventeenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEighteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleBackNinePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleTotalPar}></input> &nbsp;</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell><input id="playerNameInput1" value={props.user.name} onChange={handlePlayerOne}></input></TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleOneScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwoScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThreeScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFiveScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSevenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEightScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleNineScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleFrontNineScore}></input>  &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleElevenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwelveScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThirteenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourteenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFifteenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixteenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSeventeenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEighteenScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleBackNineScore}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleTotalScore}></input> &nbsp;</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell><input id="playerNameInput" placeholder="Player 2" onChange={handlePlayerTwo}></input></TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell><input id="playerNameInput" placeholder="Player 3" onChange={handlePlayerThree}></input></TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell><input id="playerNameInput" placeholder="Player 4" onChange={handlePlayerFour}></input></TableCell>
             <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
             <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
             <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
@@ -469,195 +589,27 @@ const Scorecard = (props) => {
           </TableRow>
           <TableRow>
             <TableCell>Par</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Player 1</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Player 2</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Rank</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Player 3</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Player 4</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Par</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Notes</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input>  &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
-            <TableCell align="right"><input id="roundTotalInputCell"></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleOnePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwoPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThreePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFivePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSevenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEightPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleNinePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleFrontNinePar}></input>  &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleElevenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwelvePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThirteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFourteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleFifteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSixteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleSeventeenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundInputCell" onChange={handleHoleEighteenPar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleBackNinePar}></input> &nbsp;</TableCell>
+            <TableCell align="right"><input id="roundTotalInputCell" onChange={handleTotalPar}></input> &nbsp;</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

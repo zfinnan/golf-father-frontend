@@ -85,7 +85,12 @@ function App() {
             component={Profile}
             user={currentUser}
           />
-          <Route exact path="/" component={Scorecard} />
+          <PrivateRoute
+            path="/"
+            component={Scorecard}
+            user={currentUser}
+          />
+          
           <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </div>

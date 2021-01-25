@@ -111,3 +111,27 @@ a {
   background: transparent;
   border: none;
 }
+
+#courseName {
+  text-align: center;
+  margin-left: 500%;
+  display: inline-block;
+}
+
+#roundDayDisplay {
+  
+}
+
+.profileRounds {
+  margin-bottom: 50px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+#cardSpacing {
+  /* margin-bottom: 50px; */
+}
+
+#bestAndWorstRoundsOverall {
+  display: inline;
+}

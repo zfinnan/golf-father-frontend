@@ -14,7 +14,7 @@ import Profile from "./components/Profile";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
-import Dashboard from "./components/Dashboard";
+import EditRound from "./components/EditRound"
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -86,12 +86,17 @@ function App() {
             user={currentUser}
           />
           <PrivateRoute
+            exact
             path="/"
             component={Scorecard}
             user={currentUser}
           />
-          
-          <Route exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute
+            exact
+            path="/editround/:id"
+            component={EditRound}
+            user={currentUser}
+          />
         </Switch>
       </div>
       <Footer />

@@ -11,6 +11,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { StylesProvider } from "@material-ui/core/styles";
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
@@ -20,16 +21,13 @@ const Profile = (props) => {
 
     const [rounds, setRounds] = useState([]);
     const [shouldReload, setShouldReload] = useState(false);
-
+    
     const useStyles = makeStyles({
-        table: {
-          width: 400,
-        },
-        tablerow: {
-          height: 20,
-        }
-      });
-
+      root: {
+        width: 30
+      }
+    })
+    
     const classes = useStyles();
 
     useEffect(() => {
@@ -40,6 +38,10 @@ const Profile = (props) => {
                 setShouldReload(false);
             });
     }, [shouldReload]);
+
+    useEffect(() => {
+      console.log(props.course)
+    }, [props.course])
 
     const handleDelete = (id) => {
         debugger
@@ -66,18 +68,20 @@ const Profile = (props) => {
                   <h2>Worst Round Overall: {worstRound}</h2>
                 </div>
                 <div className="profileRounds">
+                    
                     {rounds.map((round, index) =>
+                    <StylesProvider injectFirst>
                     <TableContainer component={Paper}>
-                    <Table className={classes.table} aria-label="simple table">
+                    <Table fixedHeader={false} style={{ width: "auto", tableLayout: "auto" }} aria-label="simple table">
                       <TableHead>
-                        <TableRow>
-                          <TableCell align="center"><h4 id="courseName">{round.course}</h4></TableCell>
-                          <TableCell align="right"><h6 id="roundDayDisplay">{round.day}</h6></TableCell>
-                          <TableCell><h6>{round.month}</h6></TableCell>
-                          <TableCell><h6>{round.year}</h6></TableCell>
-                          <TableCell><Link to={`/editround/${round._id}`} id="editButton">✎</Link></TableCell>
-                          <TableCell><button className="btn btn-primary btn-lg btn-block" id="deleteButton" type="submit" onClick={() => handleDelete(round._id)}>X</button> </TableCell>
-                        </TableRow>
+                        <div id="scoreCardHeader">
+                          <h4 id="courseName">{round.course}</h4>
+                          <h6 id="roundDayDisplay">{round.day}/{round.month}/{round.year}</h6>
+                          <Link to={`/editround/${round._id}`} id="editButton">✎</Link>
+                          <button className="btn btn-primary btn-lg btn-block" id="deleteButton" type="submit" onClick={() => handleDelete(round._id)}>X</button>
+                        </div>
+                      </TableHead>
+                      <TableHead>
                         <TableRow>
                           <TableCell>Hole</TableCell>
                           <TableCell align="right">1</TableCell>
@@ -277,9 +281,11 @@ const Profile = (props) => {
                     <div id="cardSpacing"><br></br></div>
                     </Table>
                     </TableContainer>
+                    </StylesProvider>
                 )}
                 <br></br>
                 </div>
+                <br></br>
             </div>
         </div>
     )

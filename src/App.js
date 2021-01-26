@@ -15,6 +15,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import About from "./components/About";
 import EditRound from "./components/EditRound"
+import MyCourses from "./components/MyCourses"
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -59,7 +60,6 @@ function App() {
       setIsAuthenticated(false);
     }
   };
-
   
 
   return (
@@ -89,6 +89,12 @@ function App() {
             exact
             path="/"
             component={Scorecard}
+            user={currentUser}
+          />
+          <PrivateRoute
+            exact
+            path="/mycourses"
+            component={MyCourses}
             user={currentUser}
           />
           <PrivateRoute

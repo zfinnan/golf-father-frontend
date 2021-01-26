@@ -1,14 +1,14 @@
 * {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .navbar {
-  background: rgb(101, 118, 124);
+  background: rgb(15, 139, 42);
 }
 
 .footer {
   margin-top: 20px;
-  background: rgb(161, 168, 170);
+  background: rgb(15, 139, 42);
   color: white;
 }
 
@@ -18,8 +18,9 @@ html {
 }
 body {
   margin-bottom: 60px; /* Margin bottom by footer height */
-  background-color: rgb(228, 228, 228);
-  background-size: cover;
+  color: rgb(104, 204, 126);
+  height: 100%;
+  padding-bottom:60px;
 }
 .footer {
   position: absolute;
@@ -42,6 +43,7 @@ a {
 
 #scoreCardHeader {
   text-align: center;
+  height: 60px;
 }
 
 #scoreCard {
@@ -56,19 +58,25 @@ a {
   width: 120px;
   margin-top: 10px;
   border-radius: 8%;
+  background: green;
+  color: white;
 }
 
 #courseNameInput {
   background: transparent;
   border: none;
   text-align: center;
-  margin-left: 200%;
+  margin-left: 225%;
   font-size: 20px;
+}
+
+#courseNameHeader {
+  background:rgb(18, 190, 56);
+  height: 10%;
 }
 
 #roundDay {
   width: 30px;
-  margin-left: 3900%;
   display: inline-block;
   background: transparent;
   border: none;
@@ -76,14 +84,12 @@ a {
 
 #roundMonth {
   width: 30px;
-  margin-left: 3825%;
   display: inline-block;
   background: transparent;
   border: none;
 }
 #roundYear {
   width: 30px;
-  margin-left: 3750%;
   display: inline-block;
   background: transparent;
   border: none;
@@ -101,6 +107,14 @@ a {
   border: none;
 }
 
+#deleteButton {
+  background: none;
+  border: none;
+  color: red;
+  height: 5px;
+  width: 3.5px;
+}
+
 #playerNameInput {
   width: 80px;
   background: transparent;
@@ -114,7 +128,7 @@ a {
 
 #courseName {
   text-align: center;
-  margin-left: 500%;
+  margin-left: 300%;
   display: inline-block;
 }
 
@@ -125,7 +139,7 @@ a {
 .profileRounds {
   margin-bottom: 50px;
   margin-right: 0px;
-  margin-left: 0px;
+  margin-left: 0%;
 }
 
 #cardSpacing {
@@ -133,5 +147,54 @@ a {
 }
 
 #bestAndWorstRoundsOverall {
+  display: inline;
+}
+.card {
+  margin: 5px;
+  display: inline;
+  padding: 5px;
+}
+
+
+#myCoursesHeader {
+  text-align: center;
+  margin-left: 50%;
+}
+
+#navLink {
+  color: white;
+}
+
+#scoreCardForm {
+  
+  
+}
+
+.MuiTableCell-root {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid rgba(224, 224, 224, 1);
+  
+}
+.MuiTableCell-head {
+  size: 5px;
+  width: 15px;
+  
+}
+
+.MuiTable-root {
+  width: 80%;
+  
+}
+
+.MuiTableCell-alignRight {
+  padding: 5px;
+}
+
+#deleteCell {
+  width: 30px
+}
+
+#dateInput {
   display: inline;
 }

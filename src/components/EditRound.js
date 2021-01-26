@@ -13,9 +13,6 @@ import Paper from '@material-ui/core/Paper';
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const useStyles = makeStyles({
-  table: {
-    width: 400,
-  },
   tablerow: {
     height: 20,
   }
@@ -494,12 +491,15 @@ const EditRound = (props) => {
       <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
-          <TableRow>
-            <TableCell align="center"><input id="courseNameInput" placeholder={course} onChange={handleCourse}></input></TableCell>
-            <TableCell align="right"><input id="roundDay" placeholder={roundDay} onChange={handleRoundDay}></input></TableCell>
-            <TableCell><input id="roundMonth" placeholder={roundMonth} onChange={handleRoundMonth}></input></TableCell>
-            <TableCell><input id="roundYear" placeholder={roundYear} onChange={handleRoundYear}></input></TableCell>
-          </TableRow>
+          <div>
+            <input id="courseNameInput" placeholder={course} onChange={handleCourse}></input>
+            <p>Date:</p>
+            <input id="roundDay" placeholder={roundDay} onChange={handleRoundDay}></input>
+            <input id="roundMonth" placeholder={roundMonth} onChange={handleRoundMonth}></input>
+            <input id="roundYear" placeholder={roundYear} onChange={handleRoundYear}></input>
+          </div>
+        </TableHead>
+        <TableHead>
           <TableRow>
             <TableCell>Hole</TableCell>
             <TableCell align="right">1</TableCell>

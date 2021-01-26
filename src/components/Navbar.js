@@ -5,7 +5,7 @@ const Navbar = (props) => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/" id="navLink">
           Golf Father
         </Link>
         <button
@@ -22,12 +22,17 @@ const Navbar = (props) => {
         <div className="collapse navbar-collapse" id="navbarsExample07">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" exact to="/newround">
+              <NavLink className="nav-link" exact to="/" id="navLink">
                 New Round
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/about">
+              <NavLink className="nav-link" exact to="/mycourses" id="navLink">
+                My Courses
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/about" id="navLink">
                 About
               </NavLink>
             </li>
@@ -35,14 +40,14 @@ const Navbar = (props) => {
           {props.isAuth ? (
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/profile">
+                <NavLink className="nav-link" to="/profile" id="navLink">
                   Profile
                 </NavLink>
               </li>
               <li className="nav-item">
                 <span
                   onClick={props.handleLogout}
-                  className="nav-link logout-link"
+                  className="nav-link logout-link" id="navLink"
                 >
                   Logout
                 </span>
@@ -51,12 +56,12 @@ const Navbar = (props) => {
           ) : (
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="nav-link" to="/signup">
+                <NavLink className="nav-link" to="/signup" id="navLink">
                   Create Account
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/login">
+                <NavLink className="nav-link" to="/login" id="navLink">
                   Login
                 </NavLink>
               </li>

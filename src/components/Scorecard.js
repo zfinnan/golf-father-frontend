@@ -9,15 +9,19 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { StylesProvider } from "@material-ui/core/styles";
 
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 const useStyles = makeStyles({
-  table: {
-    width: 400,
+  tableRow: {
+    height: 40,
+    width: 300,
   },
-  tablerow: {
-    height: 20,
+  MuiTableCell: {
+    root: {
+      width: 20
+    }
   }
 });
 
@@ -399,6 +403,8 @@ const Scorecard = (props) => {
   
   const classes = useStyles();
 
+  const customColumnStyle = { width: 5 };
+
   if (redirect) {
     return ( 
         <Redirect to="/profile" />
@@ -410,15 +416,19 @@ const Scorecard = (props) => {
     <div id="scoreCard">
       <h1 id="scoreCardHeader">New Round</h1>
       <form>
-      <TableContainer component={Paper}>
+      <StylesProvider injectFirst>
+      <TableContainer className={classes.table} component={Paper}>
       <Table className={classes.table} aria-label="simple table">
+          <TableHead>
+            <div id="dateInput">
+            <input id="courseNameInput" placeholder="Course Name" onChange={handleCourse}></input>
+            <p>Date:</p>
+              <input id="roundDay" placeholder="DD" onChange={handleRoundDay}></input>
+              <input id="roundMonth" placeholder="MM" onChange={handleRoundMonth}></input>
+              <input id="roundYear" placeholder="YY" onChange={handleRoundYear}></input>
+            </div>
+          </TableHead>
         <TableHead>
-          <TableRow>
-            <TableCell align="center"><input id="courseNameInput" placeholder="Course Name" onChange={handleCourse}></input></TableCell>
-            <TableCell align="right"><input id="roundDay" placeholder="DD" onChange={handleRoundDay}></input></TableCell>
-            <TableCell><input id="roundMonth" placeholder="MM" onChange={handleRoundMonth}></input></TableCell>
-            <TableCell><input id="roundYear" placeholder="YY" onChange={handleRoundYear}></input></TableCell>
-          </TableRow>
           <TableRow>
             <TableCell>Hole</TableCell>
             <TableCell align="right">1</TableCell>
@@ -443,8 +453,8 @@ const Scorecard = (props) => {
             <TableCell align="right">OUT&nbsp;</TableCell>
             <TableCell align="right">TOT&nbsp;</TableCell>
           </TableRow>
-          <TableRow>
-            <TableCell>Yardage</TableCell>
+          <TableRow className={classes.tableRow}>
+            <TableCell >Yardage</TableCell>
             <TableCell align="right"><input id="roundInputCell" onChange={handleHoleOneYardage}></input> &nbsp;</TableCell>
             <TableCell align="right"><input id="roundInputCell" onChange={handleHoleTwoYardage}></input> &nbsp;</TableCell>
             <TableCell align="right"><input id="roundInputCell" onChange={handleHoleThreeYardage}></input> &nbsp;</TableCell>
@@ -616,6 +626,7 @@ const Scorecard = (props) => {
         </TableBody>
       </Table>
       </TableContainer>
+      </StylesProvider>  
       </form>
       <button type="submit" id="saveRoundButton" value="Save Round" onClick={handleSubmit}>Save Round</button>
     </div>

@@ -19,6 +19,7 @@ const Login = (props) => {
     }
 
     const handleSubmit = (e) => {
+        console.log(REACT_APP_SERVER_URL);
         e.preventDefault();
         const userData = { email, password };
 

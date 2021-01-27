@@ -210,4 +210,7 @@ a {
   justify-content: space-between;
 } */
 
+#bestAndWorstRoundsOverall{
+  display: inline;
+}
 

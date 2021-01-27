@@ -82,7 +82,7 @@ const Profile = (props) => {
                           <div id="dateDisplayDiv">
                             <p>Date:  </p>
                             <p id="roundDayDisplay">{round.day}/{round.month}/{round.year}</p>
-                            <Link to={`/editround/${round._id}`} id="editButton">✎</Link>
+                            <Link to={`/editround/${round._id}`} id="editButton">✐</Link>
                             <button className="btn btn-primary btn-block" id="deleteButton" type="submit" onClick={() => handleDelete(round._id)}>X</button>
                           </div>
                         

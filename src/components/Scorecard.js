@@ -414,7 +414,7 @@ const Scorecard = (props) => {
   return (
     
     <div id="scoreCard">
-      <h1 id="scoreCardHeader">New Round</h1>
+      <h1 id="scoreCardHeader">Log Your Latest Round Below...</h1>
       <form>
       <StylesProvider injectFirst>
       <TableContainer className={classes.table} component={Paper}>

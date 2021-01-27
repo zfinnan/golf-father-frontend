@@ -25,6 +25,9 @@ const Profile = (props) => {
     const useStyles = makeStyles({
       root: {
         width: 30
+      },
+      tableHead: {
+        display: "flex",
       }
     })
     
@@ -61,7 +64,7 @@ const Profile = (props) => {
                 <h1>{props.user.name}</h1>
                 <p>{props.user.email}</p>
             </div>
-            <div>
+            <div id="divContainer">
                 <h1 id="profileHeader">My Rounds</h1>
                 <div id="bestAndWorstRoundsOverall">
                   <h2>Best Round Overall: {bestRound}</h2>
@@ -72,14 +75,17 @@ const Profile = (props) => {
                     {rounds.map((round, index) =>
                     <StylesProvider injectFirst>
                     <TableContainer component={Paper}>
-                    <Table fixedHeader={false} style={{ width: "auto", tableLayout: "auto" }} aria-label="simple table">
-                      <TableHead>
-                        <div id="scoreCardHeader">
+                    <Table fixedHeader={false} style={{ width: "100%", tableLayout: "auto" }} aria-label="simple table">
+                      <TableHead >
+                        
                           <h4 id="courseName">{round.course}</h4>
-                          <h6 id="roundDayDisplay">{round.day}/{round.month}/{round.year}</h6>
-                          <Link to={`/editround/${round._id}`} id="editButton">✎</Link>
-                          <button className="btn btn-primary btn-lg btn-block" id="deleteButton" type="submit" onClick={() => handleDelete(round._id)}>X</button>
-                        </div>
+                          <div id="dateDisplayDiv">
+                            <p>Date:  </p>
+                            <p id="roundDayDisplay">{round.day}/{round.month}/{round.year}</p>
+                            <Link to={`/editround/${round._id}`} id="editButton">✎</Link>
+                            <button className="btn btn-primary btn-block" id="deleteButton" type="submit" onClick={() => handleDelete(round._id)}>X</button>
+                          </div>
+                        
                       </TableHead>
                       <TableHead>
                         <TableRow>
@@ -156,25 +162,25 @@ const Profile = (props) => {
                         </TableRow>
                         <TableRow>
                           <TableCell>{round.playerOne}</TableCell>
-                          <TableCell align="right">{round.holeOneScore}  &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeTwoScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeThreeScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeFourScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeFiveScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeSixScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeSevenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeEightScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeNineScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeOnePar < round.holeOneScore ? "red" : "none" && round.holeOnePar > round.holeOneScore ? "green" : "none"}} align="right">{round.holeOneScore}  &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeTwoPar < round.holeTwoScore ? "red": "none" && round.holeTwoPar > round.holeTwoScore ? "green" : "none"}} align="right">{round.holeTwoScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeThreePar < round.holeThreeScore ? "red": "none" && round.holeThreePar >round.holeThreeScore ? "green" : "none"}} align="right">{round.holeThreeScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeFourPar < round.holeFourScore ? "red": "none" && round.holeFourPar > round.holeFourScore ? "green" : "none"}} align="right">{round.holeFourScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeFivePar < round.holeFiveScore ? "red": "none" && round.holeFivePar > round.holeFiveScore ? "green" : "none"}} align="right">{round.holeFiveScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeSixPar < round.holeSixScore ? "red": "none" && round.holeSixPar > round.holeSixScore ? "green" : "none"}} align="right">{round.holeSixScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeSevenPar < round.holeSevenScore ? "red": "none" && round.holeSevenPar > round.holeSevenScore ? "green" : "none"}} align="right">{round.holeSevenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeEightPar < round.holeEightScore ? "red": "none" && round.holeEightPar > round.holeEightScore ? "green" : "none"}} align="right">{round.holeEightScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeNinePar < round.holeNineScore ? "red": "none" && round.holeNinePar > round.holeNineScore ? "green" : "none"}} align="right">{round.holeNineScore} &nbsp;</TableCell>
                           <TableCell align="right">{round.frontNineScore}  &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeTenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeElevenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeTwelveScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeThirteenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeFourteenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeFifteenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeSixteenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeSeventeenScore} &nbsp;</TableCell>
-                          <TableCell align="right">{round.holeEighteenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeTenPar < round.holeTenScore ? "red": "none" && round.holeTenPar > round.holeTenScore ? "green" : "none"}} align="right">{round.holeTenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeElevenPar < round.holeElevenScore ? "red": "none" && round.holeElevenPar > round.holeElevenScore ? "green" : "none"}} align="right">{round.holeElevenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeTwelvePar < round.holeTwelveScore ? "red": "none" && round.holeTwelvePar > round.holeTwelveScore ? "green" : "none"}} align="right">{round.holeTwelveScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeThirteenPar < round.holeThirteenScore ? "red": "none" && round.holeThirteenPar > round.holeThirteenScore ? "green" : "none"}} align="right">{round.holeThirteenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeFourteenPar < round.holeFourteenScore ? "red": "none" && round.holeFourteenPar > round.holeFourteenScore ? "green" : "none"}} align="right">{round.holeFourteenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeFifteenPar < round.holeFifteenScore ? "red": "none" && round.holeFifteenPar > round.holeFifteenScore ? "green" : "none"}} align="right">{round.holeFifteenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeSixteenPar < round.holeSixteenScore ? "red": "none" && round.holeSixteenPar > round.holeSixteenScore ? "green" : "none"}} align="right">{round.holeSixteenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeSeventeenPar < round.holeSeventeenScore ? "red": "none" && round.holeSeventeenPar > round.holeSeventeenScore ? "green" : "none"}} align="right">{round.holeSeventeenScore} &nbsp;</TableCell>
+                          <TableCell style={{background: round.holeEighteenPar < round.holeEighteenScore ? "red": "none" && round.holeEighteenPar > round.holeEighteenScore ? "green" : "none"}} align="right">{round.holeEighteenScore} &nbsp;</TableCell>
                           <TableCell align="right">{round.backNineScore}  &nbsp;</TableCell>
                           <TableCell align="right">{round.totalScore}  &nbsp;</TableCell>
                         </TableRow>
